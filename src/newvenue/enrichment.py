@@ -20,6 +20,8 @@ def queue_candidates(conn, minimum_score: int = 55) -> int:
         (minimum_score,),
     ).fetchall()
     tasks = (
+        "existing_venue_check",
+        "venue_stage",
         "operator_entity",
         "related_venues",
         "website_social",
