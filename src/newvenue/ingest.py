@@ -74,12 +74,13 @@ def ingest_liquor_csv(conn, path: str | Path) -> tuple[int, int]:
             status = first(row, "status", "application status")
             source_url = first(row, "source_url", "source url", "url")
             description = first(row, "description", "notes", "details")
+            source_system = first(row, "source_system", "source system") or "nsw_liquor_noticeboard"
 
             payload = {k: clean_text(v) for k, v in row.items()}
             rh = record_hash(payload)
             cur = conn.execute(
                 "INSERT OR IGNORE INTO source_records(source_system,external_id,source_url,fetched_at,effective_date,record_type,raw_json,record_hash) VALUES(?,?,?,?,?,?,?,?)",
-                ("nsw_liquor_noticeboard", app_no, source_url, now(), posted, app_type, json.dumps(payload, ensure_ascii=False), rh),
+                (source_system, app_no, source_url, now(), posted, app_type, json.dumps(payload, ensure_ascii=False), rh),
             )
             if cur.rowcount == 0:
                 continue
@@ -111,12 +112,13 @@ def ingest_da_csv(conn, path: str | Path) -> tuple[int, int]:
             lodged = parse_date(first(row, "lodgement_date", "lodgement date", "date lodged", "application date", "date"))
             status = first(row, "status", "application status")
             source_url = first(row, "source_url", "source url", "url")
+            source_system = first(row, "source_system", "source system") or "nsw_planning_portal"
 
             payload = {k: clean_text(v) for k, v in row.items()}
             rh = record_hash(payload)
             cur = conn.execute(
                 "INSERT OR IGNORE INTO source_records(source_system,external_id,source_url,fetched_at,effective_date,record_type,raw_json,record_hash) VALUES(?,?,?,?,?,?,?,?)",
-                ("nsw_planning_portal", app_no, source_url, now(), lodged, "development_application", json.dumps(payload, ensure_ascii=False), rh),
+                (source_system, app_no, source_url, now(), lodged, "development_application", json.dumps(payload, ensure_ascii=False), rh),
             )
             if cur.rowcount == 0:
                 continue
