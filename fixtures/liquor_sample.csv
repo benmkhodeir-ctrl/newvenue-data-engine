@@ -1,0 +1,4 @@
+application_number,application_type,licence_name,address,suburb,postcode,lga,posted_date,status,description,source_url
+SYN-001,New on-premises licence,Sample Lantern,10 Example Street,Sydney,2000,City of Sydney,01/09/2026,Under assessment,New on-premises restaurant licence,https://example.invalid/liquor/SYN-001
+SYN-002,Transfer of licence,Existing Arms,20 Example Road,Parramatta,2150,City of Parramatta,02/09/2026,Under assessment,Transfer of existing hotel licence,https://example.invalid/liquor/SYN-002
+SYN-003,Small bar licence,Sample Cellar,30 Example Avenue,Surry Hills,2010,City of Sydney,03/09/2026,Under assessment,New small bar application,https://example.invalid/liquor/SYN-003
