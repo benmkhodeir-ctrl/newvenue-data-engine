@@ -1,0 +1,6 @@
+venue_id,field_name,field_value,confidence,source_url,source_type,observed_at,notes
+1,operator_entity,Sample Lantern Hospitality Pty Ltd,confirmed,https://example.invalid/company/1,synthetic_fixture,2026-09-01,Synthetic test data only
+1,website,https://example.invalid/sample-lantern,confirmed,https://example.invalid/sample-lantern,synthetic_fixture,2026-09-02,Synthetic test data only
+1,opening_stage,Fit-out / pre-opening,strong,https://example.invalid/planning/DA-SYN-001,synthetic_fixture,2026-09-03,Synthetic test data only
+3,operator_entity,Sample Cellar Pty Ltd,confirmed,https://example.invalid/company/3,synthetic_fixture,2026-09-01,Synthetic test data only
+3,related_venues,Sample Bar North,strong,https://example.invalid/group/3,synthetic_fixture,2026-09-02,Synthetic test data only
