@@ -1,0 +1,4 @@
+application_number,description,address,suburb,postcode,council,lodgement_date,status,source_url
+DA-SYN-001,Alterations and fit-out for use as a restaurant,10 Example St,Sydney,2000,City of Sydney,15/08/2026,Lodged,https://example.invalid/planning/DA-SYN-001
+DA-SYN-002,Internal refurbishment of existing hotel,20 Example Rd,Parramatta,2150,City of Parramatta,18/08/2026,Lodged,https://example.invalid/planning/DA-SYN-002
+DA-SYN-003,Change of use and fitout for small bar,30 Example Ave,Surry Hills,2010,City of Sydney,19/08/2026,Lodged,https://example.invalid/planning/DA-SYN-003
