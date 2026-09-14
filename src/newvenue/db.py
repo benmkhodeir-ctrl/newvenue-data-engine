@@ -14,6 +14,8 @@ def connect(path: str | Path) -> sqlite3.Connection:
 
 
 def migrate(conn: sqlite3.Connection, migrations_dir: str | Path = "migrations") -> None:
-    schema_path = Path(migrations_dir) / "001_initial.sql"
-    conn.executescript(schema_path.read_text(encoding="utf-8"))
+    root = Path(migrations_dir)
+    schema_paths = sorted(root.glob("*.sql"))
+    for schema_path in schema_paths:
+        conn.executescript(schema_path.read_text(encoding="utf-8"))
     conn.commit()
